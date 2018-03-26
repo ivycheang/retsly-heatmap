@@ -6,13 +6,14 @@
     <title>Heat Map of San Francisco Listings</title>
 
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Google Map API access token's usage is restricted on their dashboard -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHaS82dzCN3IyoYjXUqzQmjA2WCelny00&libraries=visualization"></script>
   </head>
 
   <header>
     <div id="title">Heat Map of San Francisco Listings</div>
-    <button>Refresh</button>
+    <button class="btn" id="refresh">Refresh</button>
   </header>
   
   <body>
@@ -21,6 +22,6 @@
   </body>
 
   <footer>
-    <div>Developed with Bridge API and Google Maps API</div>
+    <div id="resource">Developed with Bridge API and Google Maps API</div>
   </footer>
 </html>

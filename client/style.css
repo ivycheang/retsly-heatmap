@@ -1,0 +1,82 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+body {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  min-height: 568px;
+  margin: 0;
+  padding: 0;
+  font-family: 'pns_400',sans-serif;
+}
+
+/* Main Components */
+header {
+  height: 13%;
+  position: relative;
+  color: #ffffff;
+  background: #2f2f2f;
+}
+footer {
+  height: 5%;
+  text-align: right;
+  vertical-align: bottom;
+  font-size: 15px;
+  position: relative;
+  color: #ffffff;
+  background: #2f2f2f;
+}
+#map {
+  height: 82%;
+}
+
+/* Button class */
+.btn {
+  display: block;
+  float: right;
+  color: #ffffff;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 15px;
+  background: #5983ff;
+  position: relative;
+  border: solid 1px #5983ff;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  line-height: normal;
+}
+.btn:hover {
+  background-color: #3769ff;
+  border-color: #3769ff;
+}
+.btn:disabled {
+  background-color: #4f6f8f;
+  color: #ffffff;
+}
+
+/* Specific Components */
+#title {
+  float: left;
+  width: 80%;
+  color: #eeeeee;
+  margin: 15px 0 0 15px;
+  font-size: 45px;
+}
+#refresh {
+  margin: 15px 15px 0 0;
+}
+#resource {
+  display: inline-block;
+  padding: 8px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
