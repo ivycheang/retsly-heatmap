@@ -80,3 +80,56 @@ footer {
   bottom: 0;
   right: 0;
 }
+
+/* Responsive Design */
+@media screen and (max-height: 720px) {
+  #title {
+    font-size: 40px;
+    margin-top: 12px;
+  }
+}
+@media screen and (min-height: 1024px) {
+  header {
+    height: 10%;
+  }
+  #map {
+    height: 85%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #title {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #title {
+    left: 10px;
+    font-size: 30px;
+  }
+  .btn {
+    padding: 8px 15px;
+  }
+  header {
+    height: 10%;
+  }
+  #map {
+    height: 85%;
+  }
+}
+@media screen and (max-width: 625px) {
+  #title {
+    font-size: 25px;
+  }
+  footer {
+    font-size: 12px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 530px) {
+  #title {
+    font-size: 20px;
+    width: 65%;
+  }
+}
