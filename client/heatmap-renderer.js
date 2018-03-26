@@ -22,6 +22,15 @@ function initMap() {
 }
 
 /**
+ * Function to refresh heatmap layer
+ */
+function refreshMap() {
+  $('#refresh').prop('disabled', true);
+  offset = 0;
+  requestData();
+}
+
+/**
  * Function to handle AJAX request errors
  * 
  * @param {Object} request The request object
