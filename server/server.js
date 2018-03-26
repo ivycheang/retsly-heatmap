@@ -68,7 +68,56 @@ app.post('/', (request, response) => {
     method: 'GET'
   };
 
-  console.log(JSON.stringify(options));
+  const req = https.request(options, (res) => {
+    let data = ``;
+    
+    try {
+      res.on('data', (d) => {
+        data += d;
+      });
+      res.on('end', () => {
+        const apiResponse = JSON.parse(data);
+        if (!apiResponse.success || !Array.isArray(apiResponse.bundle)) {
+          console.log(`API request failed: ${JSON.stringify(apiResponse)}`);
+          response.send({
+            success: false,
+            error: 'Request failed'
+          });
+          console.log('Error response sent');
+        } else {
+          const heatmapData = apiResponse.bundle.map(listing => {
+            return {
+              latitude: listing.Latitude,
+              longitude: listing.Longitude
+            };
+          });
+          const end = (offset + heatmapData.length) >= Number(apiResponse.total);
+          response.send({
+            success: true,
+            end: end,
+            heatmapData: heatmapData
+          });
+          console.log('Success response sent');
+        }
+      });
+    }
+    catch (err) {
+      console.trace(err);
+      response.send({
+        success: false,
+        error: 'Internal server error'
+      });
+      console.log('Error response sent');
+    }
+  }).on('error', (err) => {
+    console.trace(err);
+    response.send({
+      success: false,
+      error: 'Internal server error'
+    });
+    console.log('Error response sent');
+  });
+  req.end();
 });
 
 app.listen(PORT, HOST);
