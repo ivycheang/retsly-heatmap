@@ -18,7 +18,7 @@ const queryParams = {
     'Latitude',
     'Longitude'
   ],
-  limit: 50,
+  limit: 100,
   poly: [
     -122.299250, 37.707985,
     -122.377871, 37.853778,
